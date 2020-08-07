@@ -9,6 +9,20 @@ def reconstruct_trip(tickets, length):
     """
     YOUR CODE HERE
     """
-    # Your code here
+
+    tickets_dict = {}
+
+    for i in range(length):
+        tickets_dict[tickets[i].source] = tickets[i].destination
+
+    last_ticket = "NONE"
+    route = []
+
+    last_ticket = tickets_dict[last_ticket]
+    route.append(last_ticket)
+
+    while last_ticket != "NONE":
+        last_ticket = tickets_dict[last_ticket]
+        route.append(last_ticket)
 
     return route
